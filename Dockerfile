@@ -20,7 +20,7 @@ COPY . .
 
 # Compilar la biblioteca de C++ con Pybind11
 #RUN python setup.py build_ext --inplace
-RUN c++ -O3 -Ofast -Wall -shared -std=c++20 -fPIC $(python3.12 -m pybind11 --includes) transformer.cpp -o transformer_module$(python3.12-config --extension-suffix)
+RUN c++ -O3 -Ofast -Wall -shared -std=c++20 -fPIC $(python3.12 -m pybind11 --includes) app/transformer.cpp -o transformer_module$(python3.12-config --extension-suffix)
 
 # Exponer el puerto para Uvicorn
 EXPOSE 8000
