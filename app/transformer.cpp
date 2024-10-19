@@ -59,6 +59,6 @@ std::vector<double> transformer(const std::vector<double>& embedding, const std:
 
 // Enlace con Pybind11
 PYBIND11_MODULE(transformer_module, m) {
-    m.def("transformer", &transformer, "A simple transformer to process embeddings",
+    m.def("transformer", &transformer, "Un transformer para procesar embeddings",
           py::arg("embedding"), py::arg("weights"));
 }
